@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Wise - Home</title>
+    <!-- <link rel="styleshet" href="/sytle.css"> -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #001F3F, #0074D9);
+            color: #FFFFFF;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .logo-container {
+            background-color: #003366;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        .logo img {
+            max-width: 300px;
+            height: auto;
+            border: 5px solid #0056FF;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 86, 255, 0.7);
+            transition: transform 0.3s;
+        }
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+        .welcome-text {
+            font-size: 2.5em;
+            margin-top: 30px;
+            color: #FFD700;
+            text-shadow: 2px 2px #000000;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .team-text {
+            font-size: 1.3em;
+            color: #FFFFFF;
+            margin: 20px 0 60px 0;
+            max-width: 600px;
+            line-height: 1.5;
+            animation: fadeIn 4s ease-in-out;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer {
+            margin-top: auto;
+            background-color: #002244;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
+        }
+        .footer .description {
+            width: 50%;
+            text-align: center;
+            margin-left: 10%;
+        }
+        .footer .team {
+            width: 30%;
+            text-align: left;
+            margin-right: 5%;
+        }
+        .footer .team ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer .team a:link {
+            color:white;
+        }
+        .footer .team a:visited {
+            color:white;
+        }
+        .footer .team a:hover {
+            color:rgb(205, 205, 205);
+        }
+        .footer .team ul li {
+            margin: 5px 0;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo">
+            <img src="256x256.png" alt="Team Logo">
+        </div>
+    </div>
+    <div class="welcome-text">Welcome to Our Project</div>
+    <div class="team-text">Here's our logo and team. Our website will appear here soon!</div>
+    <div class="footer">
+        <div class="description">
+            <h4>Description</h4>
+            <p>This project, titled "Generative Testing of SSD using TLA+ Model-Simulation," aims to enhance SSD validation by leveraging TLA+ model-simulation to generate novel test sequences beyond traditional test plans. By integrating TLA+ with Pluspy and NVMe command execution, the system will identify potential bugs through randomized, reproducible test patterns, optimizing SSD utilization and increasing test coverage. The project, sponsored by Western Digital, seeks to improve reliability, reduce idle hardware time, and provide a robust, well-documented solution for future validation improvements.</p>
+        </div>
+        <div class="team">
+            <h4>Team Members</h4>
+            <ul>
+                <li><a href="mailto:larrydavidgriffith64.5@gmail.com">Larry Griffith</a></li>
+                <li><a href="mailto:dazzionporter17@gmail.com">Dazzion Porter</a></li>
+                <li><a href="mailto:levi.h.ly@gmail.com">Levi Ly</a></li>
+                <li><a href="mailto:james.david.harris.iii@gmail.com">James Harris</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
