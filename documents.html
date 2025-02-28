@@ -8,27 +8,81 @@
 </head>
 <body>
     <div id="navbar"></div>
-    
+
+    <div class="documents-container">
+        <!-- Sidebar with Scrollable List -->
+        <div class="documents-sidebar">
+            <h2>Documents</h2>
+            <ul id="documents-list">
+                <li><a href="#" data-src="team_standards.pdf">Team Standards</a></li>
+                <li><a href="#" data-src="team_inventory.pdf">Team Inventory</a></li>
+                <li><a href="#" data-src="mini_intro.pdf">Mini Intro</a></li>
+            </ul>
+        </div>
+
+        <!-- Document Preview -->
+        <div class="document-preview">
+            <iframe id="document-frame" src="" frameborder="0"></iframe>
+            <p id="no-preview" class="hidden">No preview available</p>
+        </div>
+    </div>
 
     <div id="footer"></div>
-</body>
 
-<script>
-    async function loadHTML(selector, file, callbackName) {
-        try {
-            const response = await fetch(file);
-            const html = await response.text();
-            document.querySelector(selector).innerHTML = html;
-            
-            if (callbackName && typeof window[callbackName] === "function") {
-                window[callbackName]();
+    <script>
+        async function loadHTML(selector, file, callbackName) {
+            try {
+                const response = await fetch(file);
+                const html = await response.text();
+                document.querySelector(selector).innerHTML = html;
+                
+                if (callbackName && typeof window[callbackName] === "function") {
+                    window[callbackName]();
+                }
+            } catch (error) {
+                console.error(`Error loading HTML file: ${file}`, error);
             }
-        } catch (error) {
-            console.error(`Error loading HTML file: ${file}`, error);
         }
-    }
 
-    loadHTML('#navbar', "/common/navbar.html");
-    loadHTML('#footer', "/common/footer.html");
-</script>
+        loadHTML('#navbar', "/common/navbar.html");
+        loadHTML('#footer', "/common/footer.html");
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const documentLinks = document.querySelectorAll("#documents-list a");
+            const documentFrame = document.getElementById("document-frame");
+            const noPreviewText = document.getElementById("no-preview");
+
+            documentLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const docSrc = this.getAttribute("data-src");
+
+                    if (docSrc.startsWith("http")) {
+                        // If it's a link, show it directly
+                        documentFrame.src = docSrc;
+                        documentFrame.classList.remove("hidden");
+                        noPreviewText.classList.add("hidden");
+                    } else {
+                        // If it's a local file, check if it exists
+                        fetch(`/documents/${docSrc}`, { method: "HEAD" })
+                            .then(response => {
+                                if (response.ok) {
+                                    documentFrame.src = `/documents/${docSrc}`;
+                                    documentFrame.classList.remove("hidden");
+                                    noPreviewText.classList.add("hidden");
+                                } else {
+                                    documentFrame.classList.add("hidden");
+                                    noPreviewText.classList.remove("hidden");
+                                }
+                            })
+                            .catch(() => {
+                                documentFrame.classList.add("hidden");
+                                noPreviewText.classList.remove("hidden");
+                            });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>
