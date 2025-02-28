@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Wise - Technologies</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    
+
+    <div id="footer"></div>
+</body>
+
+<script>
+    async function loadHTML(selector, file, callbackName) {
+        try {
+            const response = await fetch(file);
+            const html = await response.text();
+            document.querySelector(selector).innerHTML = html;
+            
+            if (callbackName && typeof window[callbackName] === "function") {
+                window[callbackName]();
+            }
+        } catch (error) {
+            console.error(`Error loading HTML file: ${file}`, error);
+        }
+    }
+
+    loadHTML('#navbar', "/common/navbar.html");
+    loadHTML('#footer', "/common/footer.html");
+</script>
+</html>
