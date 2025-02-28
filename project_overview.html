@@ -9,48 +9,10 @@
 <body>
     <div id="navbar"></div>
 
-    <div>
-        <h2>Project Description</h2>
-        <p>blah</p>
-    </div>
-    
-    <div>
-        <h2>High-Level Requirements</h2>
-        <table>
-            <tr>
-              <th>Requirements</th>
-              <th>Explanation</th>
-            </tr>
-            <tr>
-              <td>The system will randomly generate test sequences.</td>
-              <td>Randomly generated tests allows SSD devices to always be tested with new sequences that are unanticipated by engineers, improving utilization and coverage.</td>
-            </tr>
-            <tr>
-              <td>The tests and their results will be reproducible.</td>
-              <td>Reproducible results are crucial for identifying the root cause of an issue and fixing the bug.</td>
-            </tr>
-            <tr>
-                <td>Upon failure, the system will automatically repeat the test with the same seed and number of steps.</td>
-                <td>Automation increases the number of tests that can be completed.</td>
-            </tr>
-            <tr>
-                <td>The system will generate logs of the test sequences and results.</td>
-                <td>Logs serve as evidence for engineers when filing JIRA bugs as well as guidance on improving Western Digital's TLA+ specifications.</td>
-            </tr>
-          </table> 
-    </div>
-
-    <div>
-        <h2>Our Envisioned Solution</h2>
-        <p>
-            We will build a modified version of PlusPy, a TLA+ Python interpreter, that generates test sequences for NVMe SSDs based on random seeds and a given number of steps to take. This version of PlusPy will send and receive blocking callbacks to an NVMe CLI which will issue the NVMe commands to the device and receive the results of the commands. As development progresses, we will share additional details here.
-        </p>
-    </div>
-
     <div class="project-container">
         <h1>Generative Testing of SSD using TLA+ Model-Simulation</h1>
 
-        <div class="project-overview">
+        <div class="impact">
             <h2>Project Overview</h2>
             <p>
                 The rapid growth of <strong>Solid-State Drives (SSDs)</strong> in consumer and enterprise applications makes their reliability <strong>critical</strong>. 
@@ -65,7 +27,7 @@
             </p>
         </div>
 
-        <div class="motivation">
+        <div class="impact">
             <h2>Problem & Motivation</h2>
             <p>
                 <strong>Current SSD validation faces major inefficiencies:</strong>
@@ -81,9 +43,37 @@
             </p>
         </div>
 
-        <div class="solution">
-            <h2>Solution Approach</h2>
-            
+        <div class="impact">
+            <h2>High-Level Requirements</h2>
+            <table>
+                <tr>
+                  <th>Requirements</th>
+                  <th>Explanation</th>
+                </tr>
+                <tr>
+                  <td>The system will randomly generate test sequences.</td>
+                  <td>Randomly generated tests allows SSD devices to always be tested with new sequences that are unanticipated by engineers, improving utilization and coverage.</td>
+                </tr>
+                <tr>
+                  <td>The tests and their results will be reproducible.</td>
+                  <td>Reproducible results are crucial for identifying the root cause of an issue and fixing the bug.</td>
+                </tr>
+                <tr>
+                    <td>Upon failure, the system will automatically repeat the test with the same seed and number of steps.</td>
+                    <td>Automation increases the number of tests that can be completed.</td>
+                </tr>
+                <tr>
+                    <td>The system will generate logs of the test sequences and results.</td>
+                    <td>Logs serve as evidence for engineers when filing JIRA bugs as well as guidance on improving Western Digital's TLA+ specifications.</td>
+                </tr>
+            </table> 
+        </div>
+
+        <div class="impact">
+            <h2>Our Envisioned Solution</h2>
+            <p>
+                We will build a modified version of PlusPy, a TLA+ Python interpreter, that generates test sequences for NVMe SSDs based on random seeds and a given number of steps to take. This version of PlusPy will send and receive blocking callbacks to an NVMe CLI which will issue the NVMe commands to the device and receive the results of the commands. As development progresses, we will share additional details here.
+            </p>
         </div>
 
         <div class="impact">
@@ -103,14 +93,15 @@
             </p>
         </div>
 
-        <div class="graphics">
+        <div class="impact">
             <h2>Project Graphics</h2>
             <div class="graphics-container">
                 <img src="images/tla_diagram.png" alt="TLA+ Model Simulation Diagram">
             </div>
         </div>
 
-        <div class="original-proposal">
+
+        <div class="impact">
             <h2>Original Project Proposal</h2>
             <p>
                 The initial concept for this project was provided by our sponsor in the form of a 
@@ -120,6 +111,7 @@
             </p>
         </div>
     </div>
+
 
     <div id="footer"></div>
 
