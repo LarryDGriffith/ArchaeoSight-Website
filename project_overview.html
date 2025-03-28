@@ -3,83 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write Wise - Project Overview</title>
+    <title>ArchaeoSight - Project Overview</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div id="navbar"></div>
-    
 
     <div class="project-container">
-        <h1>Generative Testing of SSD using TLA+ Model-Simulation</h1>
+        <h1>ArchaeoSight: Intelligent Field Support for Archaeological Discovery</h1>
 
-        <div class="project-overview">
+        <div class="impact">
             <h2>Project Overview</h2>
             <p>
-                The rapid growth of <strong>Solid-State Drives (SSDs)</strong> in consumer and enterprise applications makes their reliability <strong>critical</strong>. 
-                Traditional <strong>SSD validation</strong> relies on manually designed test plans, which <strong>fail to cover all possible failure scenarios</strong>.
-                This results in <strong>inefficient testing, idle hardware, and undetected issues</strong>.
-            </p>
-            <p>
-                Our project introduces <strong>Generative Testing</strong> using 
-                <a href="https://lamport.azurewebsites.net/tla/tla.html" target="_blank">TLA+</a>,
-                a <strong>formal specification language</strong>, combined with <strong>PlusPy</strong>, a Python-based TLA+ interpreter, to generate and execute randomized 
-                <strong>test sequences dynamically</strong> via <strong>NVMe commands</strong>. This improves <strong>test coverage, reduces bias, and ensures SSDs are tested more thoroughly</strong>.
+                <strong>ArchaeoSight</strong> is a cross-platform mobile application built to assist archaeologists in the field by integrating data from pXRF spectrometers, GPS, and image analysis. It leverages <strong>machine learning</strong> to predict potential anthropogenic hotspots and enables <strong>offline-first functionality</strong> to ensure usability in remote locations. Developed in <strong>Flutter</strong> with <strong>TensorFlow Lite</strong>, ArchaeoSight aims to modernize how field data is collected, analyzed, and visualized.
             </p>
         </div>
 
-        <div class="motivation">
+        <div class="impact">
             <h2>Problem & Motivation</h2>
             <p>
-                <strong>Current SSD validation faces major inefficiencies:</strong>
+                Archaeologists today work with high-resolution data including elemental compositions, images, and GPS points. However, these technologies bring logistical issues:
             </p>
             <ul>
-                <li>Test plans are <strong>limited to predefined cases</strong>, leaving <strong>unknown failure conditions untested</strong>.</li>
-                <li>Once test plans <strong>run out of cases</strong>, SSD hardware sits <strong>idle</strong>, wasting resources.</li>
-                <li>Re-executing the <strong>same test plan</strong> does not improve test coverage.</li>
+                <li>Manual recording of data from specialized tools like <strong>pXRF devices</strong> is tedious and prone to error.</li>
+                <li>Limited or no <strong>internet access</strong> at dig sites hinders data transfer and collaboration.</li>
+                <li>There’s a need for <strong>real-time guidance</strong> on where to dig based on collected data.</li>
             </ul>
             <p>
-                Our solution <strong>eliminates these inefficiencies</strong> by continuously generating <strong>new test sequences</strong> using TLA+ 
-                specifications, ensuring SSDs undergo <strong>unanticipated conditions</strong>, leading to <strong>better bug detection</strong>.
+                ArchaeoSight resolves these by streamlining data input, offering offline support, and integrating ML-based hotspot prediction in a user-friendly mobile interface.
             </p>
         </div>
 
-        <div class="solution">
-            <h2>Solution Approach</h2>
-            
+        <div class="impact">
+            <h2>High-Level Requirements</h2>
+            <table>
+                <tr>
+                    <th>Requirements</th>
+                    <th>Explanation</th>
+                </tr>
+                <tr>
+                    <td>Cross-platform mobile support</td>
+                    <td>Compatible with both Android and iOS via Flutter for use on any field device.</td>
+                </tr>
+                <tr>
+                    <td>Machine learning integration</td>
+                    <td>Provides real-time predictions of anthropogenic hotspots using TensorFlow Lite.</td>
+                </tr>
+                <tr>
+                    <td>Offline-first data storage</td>
+                    <td>Allows archaeologists to collect and view data without an internet connection, syncing when online.</td>
+                </tr>
+                <tr>
+                    <td>Integration with pXRF tools</td>
+                    <td>Supports CSV data from Bruker and SciAps devices for seamless analysis.</td>
+                </tr>
+            </table> 
+        </div>
+
+        <div class="impact">
+            <h2>Our Envisioned Solution</h2>
+            <p>
+                ArchaeoSight will offer photo capturing, GPS tracking, and support for uploading CSV exports from pXRF spectrometers. A lightweight ML model will run on-device to provide site predictions based on collected data. The app’s architecture will follow a <strong>stream-based offline-first model</strong> for robust performance, with synchronization via <strong>push notifications</strong> when online.
+            </p>
         </div>
 
         <div class="impact">
             <h2>Project Impact</h2>
             <p>
-                By <strong>automating test sequence generation</strong>, this system provides <strong>major advantages</strong>:
+                ArchaeoSight provides a major step forward for field archaeology:
             </p>
             <ul>
-                <li>🚀 <strong>Increases SSD test coverage</strong>, ensuring reliability beyond predefined test plans.</li>
-                <li>💰 <strong>Reduces SSD idle time</strong>, improving resource utilization.</li>
-                <li>🔄 <strong>Automates failure reproduction</strong>, simplifying debugging.</li>
-                <li>🎯 <strong>Eliminates engineering bias</strong>, testing cases engineers may overlook.</li>
+                <li><strong>Identifies excavation hotspots</strong> based on real-time ML analysis.</li>
+                <li><strong>Functions fully offline</strong> with seamless sync when online.</li>
+                <li><strong>Integrates data</strong> from pXRF readings, GPS, and images for comprehensive insight.</li>
+                <li><strong>Works on any modern mobile device</strong>, making it ideal for rugged fieldwork conditions.</li>
             </ul>
             <p>
-                The final <strong>codebase and documentation</strong> will be delivered to <strong>Western Digital</strong>, 
-                ensuring future improvements and seamless integration into existing SSD validation pipelines.
+                The system empowers archaeologists to spend less time managing data and more time making discoveries—bridging the gap between AI and anthropology.
             </p>
         </div>
 
-        <div class="graphics">
-            <h2>Project Graphics</h2>
-            <div class="graphics-container">
-                <img src="images/tla_diagram.png" alt="TLA+ Model Simulation Diagram">
-            </div>
-        </div>
-
-        <div class="original-proposal">
+        <div class="impact">
             <h2>Original Project Proposal</h2>
             <p>
-                The initial concept for this project was provided by our sponsor in the form of a 
-                <a href="/documents/project_proposal.pdf" target="_blank">Capstone project proposal</a>. 
-                This proposal outlined the <strong>motivation and initial ideas</strong> for generative SSD testing, which have 
-                been <strong>refined through collaboration</strong> with Western Digital.
+                The original project was proposed by <strong>Dr. Kayeleigh Sharp</strong>, who provided use-case data from her excavations at Huaca Letrada in Peru. The vision was refined in collaboration with our team, <strong>Jeevana Swaroop Kalapala</strong>, and further discussion with <strong>Dr. Sharp</strong>.
             </p>
         </div>
     </div>
