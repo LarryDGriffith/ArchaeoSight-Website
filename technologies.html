@@ -5,11 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Write Wise - Technologies</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .header-container {
+            background-color: #003366;
+            width: 100%;
+            padding: 40px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .header-container h1 {
+            font-size: 2.5em;
+            color: #FFD700;
+            text-shadow: 2px 2px #000000;
+        }
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: left;
+            background: rgba(0, 0, 50, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 86, 255, 0.7);
+        }
+        h2 {
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
     <div id="navbar"></div>
     
-
+    <div class="header-container">
+        <h1>Technologies Used</h1>
+    </div>
+    
+    <div class="content">
+        <table border="1" style="width:100%; text-align:left; border-collapse: collapse; background: rgba(0, 0, 50, 0.7); color: white;">
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/python.svg" alt="Python" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Python</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Python is primarily used to run and manage the modified Pluspy interpreter, which processes the TLA+ specifications. It coordinates the generation of random seeds and test steps, handles interactions with the nvme-cli for sending and receiving NVMe commands, and logs the test sequences and results. Python also manages retries of the test sequences to ensure reproducibility and tracks the results for debugging and bug filing purposes.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/tlalogo.avif" alt="TLA+" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">TLA+</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;"> TLA+ is used to define and formalize the behavior of the system under test, allowing for the generation of test sequences. These sequences are then executed by the modified Pluspy interpreter, which interacts with the NVMe SSD device, ensuring that the test scenarios are consistent and reproducible for failure detection and debugging.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/PlusPy.png" alt="React.js" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">PlusPy</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Pluspy is the Python interpreter for TLA+, executing the TLA+ specifications and generating test sequences based on a random seed and number of steps. It interfaces with the NVMe SSD device through blocking callbacks to nvme-cli, sending commands and receiving results. Pluspy ensures that the same test sequence can be reproduced in case of failures by sampling the same path with the same inputs, which is essential for debugging and validating potential issues.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/vscode.png" alt="Django" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">VSCode</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">VSCode will serve as our text editor. It is lightweight and has many beneficial plugins, including a TLA+ plugin.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/ubuntu.png" alt="PostgreSQL" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Ubuntu Linux</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">The system will run in an Ubuntu Linux enviornment. </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;">
+                    <img src="images/logos/github.png" alt="AWS" width="50" style="border-radius: 50%;">
+                </td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">GitHub</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">GitHub will serve as our version control software, allowing us to easily apply updates and rollbacks.</td>
+            </tr>
+            
+        </table>
+    </div>
+    
     <div id="footer"></div>
 </body>
 
