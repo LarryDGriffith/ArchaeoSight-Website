@@ -3,37 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write Wise - Technologies</title>
+    <title>Archaeological ML Project - Technologies</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
-        .header-container {
-            background-color: #003366;
-            width: 100%;
-            padding: 40px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .header-container h1 {
-            font-size: 2.5em;
-            color: #FFD700;
-            text-shadow: 2px 2px #000000;
-        }
-        .content {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: left;
-            background: rgba(0, 0, 50, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 86, 255, 0.7);
-        }
-        h2 {
-            border-bottom: 2px solid #FFD700;
-            padding-bottom: 5px;
-        }
     </style>
 </head>
 <body>
@@ -44,40 +16,72 @@
     </div>
     
     <div class="content">
-        <table border="1" style="width:100%; text-align:left; border-collapse: collapse; background: rgba(0, 0, 50, 0.7); color: white;">
+        <table border="1" style="width:100%; text-align:left; border-collapse: collapse; background: rgb(255, 81, 0); color: white;">
+            <!-- Programming Language -->
             <tr>
-                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/python.svg" alt="Python" width="50"></td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">Python</td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">Python is primarily used to run and manage the modified Pluspy interpreter, which processes the TLA+ specifications. It coordinates the generation of random seeds and test steps, handles interactions with the nvme-cli for sending and receiving NVMe commands, and logs the test sequences and results. Python also manages retries of the test sequences to ensure reproducibility and tracks the results for debugging and bug filing purposes.</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/tlalogo.avif" alt="TLA+" width="50"></td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">TLA+</td>
-                <td style="padding: 10px; border: 1px solid #FFD700;"> TLA+ is used to define and formalize the behavior of the system under test, allowing for the generation of test sequences. These sequences are then executed by the modified Pluspy interpreter, which interacts with the NVMe SSD device, ensuring that the test scenarios are consistent and reproducible for failure detection and debugging.</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/PlusPy.png" alt="React.js" width="50"></td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">PlusPy</td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">Pluspy is the Python interpreter for TLA+, executing the TLA+ specifications and generating test sequences based on a random seed and number of steps. It interfaces with the NVMe SSD device through blocking callbacks to nvme-cli, sending commands and receiving results. Pluspy ensures that the same test sequence can be reproduced in case of failures by sampling the same path with the same inputs, which is essential for debugging and validating potential issues.</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/vscode.png" alt="Django" width="50"></td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">VSCode</td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">VSCode will serve as our text editor. It is lightweight and has many beneficial plugins, including a TLA+ plugin.</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/ubuntu.png" alt="PostgreSQL" width="50"></td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">Ubuntu Linux</td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">The system will run in an Ubuntu Linux enviornment. </td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #FFD700;">
-                    <img src="images/logos/github.png" alt="AWS" width="50" style="border-radius: 50%;">
-                </td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">GitHub</td>
-                <td style="padding: 10px; border: 1px solid #FFD700;">GitHub will serve as our version control software, allowing us to easily apply updates and rollbacks.</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/dart.png" alt="Dart" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Dart</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Dart serves as our primary programming language for the Flutter mobile application, providing excellent performance (due to compiling to native ARM code) and cross-platform capabilities. It also allows for FFI (Foreign Function Interface), which will allow us to write the ML Algorithm in C/C++.</td>
             </tr>
             
+            <!-- Mobile Framework -->
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/flutter.png" alt="Flutter" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Flutter</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Our cross-platform mobile framework of choice, using Dart programming language which compiles to native ARM code for high performance on both iOS and Android devices.</td>
+            </tr>
+            
+            <!-- Machine Learning -->
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/Tensorflow_logo.svg.png" alt="TensorFlow" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">TensorFlow Lite</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">A Possible lightweight ML solution for mobile devices that enables real-time predictions in the field, integrated directly into our Flutter application using Dart bindings.</td>
+            </tr>
+            
+            <!-- Database -->
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/Postgresql_elephant.svg" alt="PostgreSQL" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">PostgreSQL with PostGIS</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Our primary database solution with geospatial extensions for storing and analyzing archaeological site data with location information.</td>
+            </tr>
+            
+            <!-- Offline Sync -->
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/firebase.png" alt="Firebase" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Firebase</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Provides messaging and synchronization services for our offline-first approach, notifying devices when data needs to be updated, with Dart/Flutter integration.</td>
+            </tr>
+            
+            <!-- GIS Libraries -->
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/geopandas.png" alt="GeoPandas" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">GeoPandas & flutter_map</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Geospatial libraries with flutter_map providing Dart-based mobile mapping capabilities for archaeological site visualization.</td>
+            </tr>
+            
+            <!-- pXRF Integration -->
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;"><img src="images/logos/csv.png" alt="CSV" width="50"></td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">CSV Data Processing</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Primary format for integrating data from pXRF tools, processed in Dart using CSV parsing libraries for Flutter.</td>
+            </tr>
+            
+            <!-- Version Control -->
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;">
+                    <img src="images/logos/github.png" alt="GitHub" width="50" style="border-radius: 50%;">
+                </td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">GitHub</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">Our version control and collaboration platform, with GitHub Actions automating our testing pipeline and GitHub Pages hosting project documentation.</td>
+            </tr>
+
+            <tr>
+                <td style="padding: 10px; border: 1px solid #FFD700;">
+                    <img src="images/logos/vscode.png" alt="GitHub" width="50" style="border-radius: 50%;">
+                </td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">VSCode</td>
+                <td style="padding: 10px; border: 1px solid #FFD700;">VSCode is a lightweight IDE that offers many plugins for many types of development.</td>
+            </tr>
         </table>
     </div>
     
