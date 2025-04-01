@@ -65,7 +65,7 @@
                         noPreviewText.classList.add("hidden");
                     } else {
                         // If it's a local file, check if it exists
-                        fetch(`/documents/${docSrc}`, { method: "HEAD" })
+                        fetch(`documents/${docSrc}`, { method: "HEAD" })
                             .then(response => {
                                 if (response.ok) {
                                     documentFrame.src = `/documents/${docSrc}`;
