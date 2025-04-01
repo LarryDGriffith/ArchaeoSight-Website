@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArchaeoSight - Project Overview</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
 </head>
 <body>
     <div id="navbar"></div>
@@ -92,20 +93,15 @@
     </div>
 
     <div id="footer"></div>
-
     <script>
-        async function loadHTML(selector, file) {
-            try {
-                const response = await fetch(file);
-                const html = await response.text();
-                document.querySelector(selector).innerHTML = html;
-            } catch (error) {
-                console.error(`Error loading HTML file: ${file}`, error);
-            }
-        }
+        $(function(){
+          $("#navbar").load("common/navbar.html");
+        });
 
-        loadHTML('#navbar', "/common/navbar.html");
-        loadHTML('#footer', "/common/footer.html");
+        $(function(){
+          $("#footer").load("common/footer.html");
+        });
     </script>
+
 </body>
 </html>

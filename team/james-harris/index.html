@@ -65,6 +65,7 @@
             text-align: center;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
 </head>
 <body>
     <div id="navbar"></div>
@@ -105,21 +106,12 @@
 </body>
 
 <script>
-    async function loadHTML(selector, file, callbackName) {
-        try {
-            const response = await fetch(file);
-            const html = await response.text();
-            document.querySelector(selector).innerHTML = html;
-            
-            if (callbackName && typeof window[callbackName] === "function") {
-                window[callbackName]();
-            }
-        } catch (error) {
-            console.error(`Error loading HTML file: ${file}`, error);
-        }
-    }
+    $(function(){
+          $("#navbar").load("common/navbar.html");
+        });
 
-    loadHTML('#navbar', "/common/navbar.html");
-    loadHTML('#footer', "/common/footer.html");
+        $(function(){
+          $("#footer").load("common/footer.html");
+        });
 </script>
 </html>
