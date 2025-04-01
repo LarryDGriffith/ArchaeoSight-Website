@@ -3,68 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Harris</title>
-    <link rel="stylesheet" href="/styles/style.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #001F3F, #0074D9);
-            color: #FFFFFF;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .header-container {
-            background-color: #003366;
-            width: 100%;
-            padding: 40px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .header-text {
-            text-align: center;
-            margin-right: 50px;
-        }
-        .header-container h1 {
-            font-size: 2.5em;
-            color: #FFD700;
-            text-shadow: 2px 2px #000000;
-        }
-        .headshot {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 3px solid #FFD700;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
-            object-fit: cover;
-        }
-        .content {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: left;
-            background: rgba(0, 0, 50, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 86, 255, 0.7);
-        }
-        h2 {
-            border-bottom: 2px solid #FFD700;
-            padding-bottom: 5px;
-        }
-        .footer {
-            margin-top: auto;
-            background-color: #002244;
-            color: #FFFFFF;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
+    <title>ArchaeoSight - James Harris</title>
+    <link rel="stylesheet" href="../../styles/style.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
 </head>
 <body>
@@ -75,43 +15,67 @@
             <h1>James Harris</h1>
             <p>Yuma, AZ</p>
         </div>
-        <img class="headshot" src="/images/team/james.jpg" alt="James Harris Headshot">
+        <img class="headshot" src="../../images/team/james.jpg" alt="James Harris Headshot">
     </div>
     <div class="content">
-        <h2>Education</h2>
-        <p><strong>Northern Arizona University, Flagstaff, AZ</strong><br>
-        Bachelor of Science in Software Engineering (Aug 2023 — Dec 2025)<br>
-        Relevant Courses: Software Testing, Software Engineering, Database Management</p>
-        <p><strong>Arizona Western College, Yuma, AZ</strong><br>
-        Associate of Science in Computer Science (Jul 2021 — May 2023)<br>
-        Graduated with Honors</p>
+        <div class="impact">
+            <h2>Education</h2>
+            <p><strong>Northern Arizona University, Flagstaff, AZ</strong><br>
+            Bachelor of Science in Software Engineering (Aug 2023 — Dec 2025)<br>
+            Relevant Courses: Software Testing, Software Engineering, Database Management</p>
+            <p><strong>Arizona Western College, Yuma, AZ</strong><br>
+            Associate of Science in Computer Science (Jul 2021 — May 2023)<br>
+            Graduated with Honors</p>
+        </div>
 
-        <h2>Work Experience</h2>
-        <p><strong>Web Developer, 2RB Milsim (Remote) (Jul 2024 — Present)</strong><br>
-        - Designed and maintained a web system integrating stateful backend logic.<br>
-        - Implemented rigorous testing strategies ensuring system stability.</p>
-        <p><strong>Head Game Developer, Reborn Gaming (Remote) (Jul 2023 — Aug 2024)</strong><br>
-        - Led a multi-developer team in designing a game architecture.<br>
-        - Implemented bug-tracking and testing frameworks.</p>
+        <div class="impact">
+            <h2>Work Experience</h2>
+            <p><strong>Web Developer, 2RB Milsim (Remote) (Jul 2024 — Present)</strong><br>
+            - Designed and maintained a web system integrating stateful backend logic.<br>
+            - Implemented rigorous testing strategies ensuring system stability.</p>
+            <p><strong>Head Game Developer, Reborn Gaming (Remote) (Jul 2023 — Aug 2024)</strong><br>
+            - Led a multi-developer team in designing a game architecture.<br>
+            - Implemented bug-tracking and testing frameworks.</p>
+        </div>
 
-        <h2>Skills</h2>
-        <p><strong>Programming & Software Development:</strong> Proficient in C, C++, C#, Java, JavaScript, HTML, SQL, MongoDB, Node.js.</p>
-        <p><strong>Front & Back-End Development:</strong> Experience in web applications, AWS, GitHub, UI/UX best practices.</p>
-        <p><strong>Verification & Testing:</strong> Debugging, stress-testing, correctness in complex workflows.</p>
+        <div class="impact">
+            <h2>Skills</h2>
+            <p><strong>Programming & Software Development:</strong> Proficient in C, C++, C#, Java, JavaScript, HTML, SQL, MongoDB, Node.js.</p>
+            <p><strong>Front & Back-End Development:</strong> Experience in web applications, AWS, GitHub, UI/UX best practices.</p>
+            <p><strong>Verification & Testing:</strong> Debugging, stress-testing, correctness in complex workflows.</p>
+        </div>
 
-        <h2>Other Interests</h2>
-        <p>Passionate about software verification, systems modeling, and efficient algorithm design.</p>
+        <div class="impact">
+            <h2>Other Interests</h2>
+            <p>Passionate about software verification, systems modeling, and efficient algorithm design.</p>
+        </div>
     </div>
     <div id="footer"></div>
 </body>
 
 <script>
     $(function(){
-          $("#navbar").load("common/navbar.html");
-        });
+        $("#navbar").load("../../common/navbar.html", function() {
+            const prefix = "../../";
 
-        $(function(){
-          $("#footer").load("common/footer.html");
+            // Set the logo path
+            $(".nav-logo-img").each(function() {
+                const path = $(this).attr("data-src");
+                $(this).attr("src", prefix + path);
+            });
+
+            // Set all internal nav links
+            $(".nav-button[data-href]").each(function() {
+                const relativeHref = $(this).attr("data-href");
+                $(this).attr("href", prefix + relativeHref);
+            });
         });
+    });
+
+
+
+    $(function(){
+        $("#footer").load("../../common/footer.html");
+    });
 </script>
 </html>
