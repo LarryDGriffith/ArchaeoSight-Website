@@ -1,34 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write Wise - Technologies</title>
+    <title>Archaeological ML Project - Technologies</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div id="navbar"></div>
     
+    <div class="spacer"></div>
+    
+    <div class="project-container">
+        <h1>Technologies Used</h1>
+        
+        <div class="content">
+            <table style="width:100%; text-align:left; border-collapse: collapse; margin: 20px 0;">
+                <!-- Programming Language -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><img src="images/logos/dart.png" alt="Dart" width="50"></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>Dart</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">Dart serves as our primary programming language for the Flutter mobile application, providing excellent performance (due to compiling to native ARM code) and cross-platform capabilities. It also allows for FFI (Foreign Function Interface), which will allow us to write the ML Algorithm in C/C++.</td>
+                </tr>
+                
+                <!-- Mobile Framework -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><img src="images/logos/flutter.png" alt="Flutter" width="50"></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>Flutter</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">Our cross-platform mobile framework of choice, using Dart programming language which compiles to native ARM code for high performance on both iOS and Android devices.</td>
+                </tr>
+                
+                <!-- Machine Learning -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><img src="images/logos/Tensorflow_logo.svg.png" alt="TensorFlow" width="50"></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>TensorFlow Lite</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">A Possible lightweight ML solution for mobile devices that enables real-time predictions in the field, integrated directly into our Flutter application using Dart bindings.</td>
+                </tr>
+                
+                <!-- Database -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><img src="images/logos/Postgresql_elephant.svg" alt="PostgreSQL" width="50"></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>PostgreSQL with PostGIS</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">Our primary database solution with geospatial extensions for storing and analyzing archaeological site data with location information.</td>
+                </tr>
+                
+                <!-- Offline Sync -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><img src="images/logos/firebase.png" alt="Firebase" width="50"></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>Firebase</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">Provides messaging and synchronization services for our offline-first approach, notifying devices when data needs to be updated, with Dart/Flutter integration.</td>
+                </tr>
+                
+                <!-- GIS Libraries -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><img src="images/logos/geopandas.png" alt="GeoPandas" width="50"></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>GeoPandas & flutter_map</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">Geospatial libraries with flutter_map providing Dart-based mobile mapping capabilities for archaeological site visualization.</td>
+                </tr>
+                
+                <!-- pXRF Integration -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><img src="images/logos/csv.png" alt="CSV" width="50"></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>CSV Data Processing</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">Primary format for integrating data from pXRF tools, processed in Dart using CSV parsing libraries for Flutter.</td>
+                </tr>
+                
+                <!-- Version Control -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">
+                        <img src="images/logos/github.png" alt="GitHub" width="50" style="border-radius: 50%;">
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>GitHub</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">Our version control and collaboration platform, with GitHub Actions automating our testing pipeline and GitHub Pages hosting project documentation.</td>
+                </tr>
 
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">
+                        <img src="images/logos/vscode.png" alt="GitHub" width="50" style="border-radius: 50%;">
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;"><strong>VSCode</strong></td>
+                    <td style="padding: 10px; border: 1px solid #3c54a4;">VSCode is a lightweight IDE that offers many plugins for many types of development.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
     <div id="footer"></div>
-</body>
 
-<script>
-    async function loadHTML(selector, file, callbackName) {
-        try {
-            const response = await fetch(file);
-            const html = await response.text();
-            document.querySelector(selector).innerHTML = html;
-            
-            if (callbackName && typeof window[callbackName] === "function") {
-                window[callbackName]();
+    <script>
+        async function loadHTML(selector, file, callbackName) {
+            try {
+                const response = await fetch(file);
+                const html = await response.text();
+                document.querySelector(selector).innerHTML = html;
+                
+                if (callbackName && typeof window[callbackName] === "function") {
+                    window[callbackName]();
+                }
+            } catch (error) {
+                console.error(`Error loading HTML file: ${file}`, error);
             }
-        } catch (error) {
-            console.error(`Error loading HTML file: ${file}`, error);
         }
-    }
 
-    loadHTML('#navbar', "/common/navbar.html");
-    loadHTML('#footer', "/common/footer.html");
-</script>
+        loadHTML('#navbar', "/common/navbar.html");
+        loadHTML('#footer', "/common/footer.html");
+    </script>
+</body>
 </html>

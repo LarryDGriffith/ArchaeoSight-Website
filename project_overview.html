@@ -3,32 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write Wise - Project Overview</title>
+    <title>ArchaeoSight - Project Overview</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div id="navbar"></div>
-    
+
+    <div class="project-container">
+        <h1>ArchaeoSight: Intelligent Field Support for Archaeological Discovery</h1>
+
+        <div class="impact">
+            <h2>Project Overview</h2>
+            <p>
+                <strong>ArchaeoSight</strong> is a cross-platform mobile application built to assist archaeologists in the field by integrating data from pXRF spectrometers, GPS, and image analysis. It leverages <strong>machine learning</strong> to predict potential anthropogenic hotspots and enables <strong>offline-first functionality</strong> to ensure usability in remote locations. Developed in <strong>Flutter</strong> with <strong>TensorFlow Lite</strong>, ArchaeoSight aims to modernize how field data is collected, analyzed, and visualized.
+            </p>
+        </div>
+
+        <div class="impact">
+            <h2>Problem & Motivation</h2>
+            <p>
+                Archaeologists today work with high-resolution data including elemental compositions, images, and GPS points. However, these technologies bring logistical issues:
+            </p>
+            <ul>
+                <li>Manual recording of data from specialized tools like <strong>pXRF devices</strong> is tedious and prone to error.</li>
+                <li>Limited or no <strong>internet access</strong> at dig sites hinders data transfer and collaboration.</li>
+                <li>There’s a need for <strong>real-time guidance</strong> on where to dig based on collected data.</li>
+            </ul>
+            <p>
+                ArchaeoSight resolves these by streamlining data input, offering offline support, and integrating ML-based hotspot prediction in a user-friendly mobile interface.
+            </p>
+        </div>
+
+        <div class="impact">
+            <h2>High-Level Requirements</h2>
+            <table>
+                <tr>
+                    <th>Requirements</th>
+                    <th>Explanation</th>
+                </tr>
+                <tr>
+                    <td>Cross-platform mobile support</td>
+                    <td>Compatible with both Android and iOS via Flutter for use on any field device.</td>
+                </tr>
+                <tr>
+                    <td>Machine learning integration</td>
+                    <td>Provides real-time predictions of anthropogenic hotspots using TensorFlow Lite.</td>
+                </tr>
+                <tr>
+                    <td>Offline-first data storage</td>
+                    <td>Allows archaeologists to collect and view data without an internet connection, syncing when online.</td>
+                </tr>
+                <tr>
+                    <td>Integration with pXRF tools</td>
+                    <td>Supports CSV data from Bruker and SciAps devices for seamless analysis.</td>
+                </tr>
+            </table> 
+        </div>
+
+        <div class="impact">
+            <h2>Our Envisioned Solution</h2>
+            <p>
+                ArchaeoSight will offer photo capturing, GPS tracking, and support for uploading CSV exports from pXRF spectrometers. A lightweight ML model will run on-device to provide site predictions based on collected data. The app’s architecture will follow a <strong>stream-based offline-first model</strong> for robust performance, with synchronization via <strong>push notifications</strong> when online.
+            </p>
+        </div>
+
+        <div class="impact">
+            <h2>Project Impact</h2>
+            <p>
+                ArchaeoSight provides a major step forward for field archaeology:
+            </p>
+            <ul>
+                <li><strong>Identifies excavation hotspots</strong> based on real-time ML analysis.</li>
+                <li><strong>Functions fully offline</strong> with seamless sync when online.</li>
+                <li><strong>Integrates data</strong> from pXRF readings, GPS, and images for comprehensive insight.</li>
+                <li><strong>Works on any modern mobile device</strong>, making it ideal for rugged fieldwork conditions.</li>
+            </ul>
+            <p>
+                The system empowers archaeologists to spend less time managing data and more time making discoveries—bridging the gap between AI and anthropology.
+            </p>
+        </div>
+
+        <div class="impact">
+            <h2>Original Project Proposal</h2>
+            <p>
+                The original project was proposed by <strong>Dr. Kayeleigh Sharp</strong>, who provided use-case data from her excavations at Huaca Letrada in Peru. The vision was refined in collaboration with our team, <strong>Jeevana Swaroop Kalapala</strong>, and further discussion with <strong>Dr. Sharp</strong>.
+            </p>
+        </div>
+    </div>
 
     <div id="footer"></div>
-</body>
 
-<script>
-    async function loadHTML(selector, file, callbackName) {
-        try {
-            const response = await fetch(file);
-            const html = await response.text();
-            document.querySelector(selector).innerHTML = html;
-            
-            if (callbackName && typeof window[callbackName] === "function") {
-                window[callbackName]();
+    <script>
+        async function loadHTML(selector, file) {
+            try {
+                const response = await fetch(file);
+                const html = await response.text();
+                document.querySelector(selector).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading HTML file: ${file}`, error);
             }
-        } catch (error) {
-            console.error(`Error loading HTML file: ${file}`, error);
         }
-    }
 
-    loadHTML('#navbar', "/common/navbar.html");
-    loadHTML('#footer', "/common/footer.html");
-</script>
+        loadHTML('#navbar', "/common/navbar.html");
+        loadHTML('#footer', "/common/footer.html");
+    </script>
+</body>
 </html>
